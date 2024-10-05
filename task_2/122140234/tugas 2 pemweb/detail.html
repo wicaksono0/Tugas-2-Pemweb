@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pendaftar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Detail Pendaftar</h1>
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Telepon</th>
+            <th>Alamat</th>
+        </tr>
+        <tr>
+            <td id="nama"></td>
+            <td id="email"></td>
+            <td id="telepon"></td>
+            <td id="alamat"></td>
+        </tr>
+    </table>
+
+    <script>
+        // Mendapatkan query string dari URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        // Menampilkan data ke tabel
+        document.getElementById('nama').textContent = urlParams.get('nama');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('telepon').textContent = urlParams.get('telepon');
+        document.getElementById('alamat').textContent = urlParams.get('alamat');
+    </script>
+</body>
+</html>
